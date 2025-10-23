@@ -28,7 +28,7 @@ def reverse(text):
         return 'No text entered'
     return f'{text[::-1]}'
 
-@app.route('/user/<name>/<int:age>')
+@app.route('/user/<str:name>/<int:age>')
 def greet_user_w_age(name, age):
     if name == '':
         return 'Enter name'
