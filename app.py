@@ -14,7 +14,7 @@ def hello():
 def info():
     return 'This is an information page.'
 
-@app.route('/calc/<num1>/<num2>')
+@app.route('/calc/<int:num1>/<int:num2>')
 def calc(num1: int, num2: int):
     try:
         total = int(num1) + int(num2)
@@ -28,7 +28,7 @@ def reverse(text):
         return 'No text entered'
     return f'{text[::-1]}'
 
-@app.route('/user/<name>/<age>')
+@app.route('/user/<name>/<int:age>')
 def greet_user_w_age(name, age):
     if name == '':
         return 'Enter name'
