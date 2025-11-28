@@ -1,6 +1,4 @@
-from flask import Flask
-
-app = Flask(__name__)
+from app import app
 
 @app.route('/')
 def home():
@@ -12,7 +10,7 @@ def hello():
 
 @app.route('/info')
 def info():
-    return 'This is an information page.'
+    return 'This is an informational page'
 
 @app.route('/calc/<int:num1>/<int:num2>')
 def calc(num1: int, num2: int):
@@ -23,25 +21,22 @@ def calc(num1: int, num2: int):
         return f'Invalid format, enter numbers'
 
 @app.route('/reverse/<text>')
-def reverse(text):
+def reverse(text: str):
     if text == '':
         return 'No text entered'
-    return f'{text[::-1]}'
+    return text[::-1]
 
-@app.route('/user/<str:name>/<int:age>')
-def greet_user_w_age(name, age):
+@app.route('/user/<string:name>/<int:age>')
+def greet_user(name: str, age: int):
     if name == '':
         return 'Enter name'
+
     try:
         age = int(age)
-        if age < 0 or age > 110:
-            return 'Invalid age'
+        if age < 0 or age > 123:
+            return ('invalid age')
 
-        return f'Hello, {name}. You are {age} years old.'
+        return f'Hello, {name}. You are {age} years old'
     except ValueError:
         return 'Invalid format, enter age as a number'
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
 
