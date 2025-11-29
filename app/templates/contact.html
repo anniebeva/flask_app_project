@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="introContact" class="introContainer">
+        <h1 class="pageHeader">Contact Information</h1>
+        <p class="pageDescription">This page includes contact information</p>
+    </div>
+
+    <div id="contactsTableBox" class="tableContainer">
+        <table id="contactsTable">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Photo</th>
+            </tr>
+            <tr>
+                <th>Alice</th>
+                <th>alice@wonderland.com</th>
+                <th>+1111111</th>
+                <th><img src="{{ url_for('static', filename='img/alicephoto.jpeg') }}" alt="Alice" class="contactPhoto"></th>
+            </tr>
+            <tr>
+                <th>Tom</th>
+                <th>tom@jerry.com</th>
+                <th>+9999999</th>
+                <th><img src="{{ url_for('static', filename='img/tomphoto.jpeg') }}" alt="Tom" class="contactPhoto"></th>
+            </tr>
+        </table>
+    </div> <br>
+
+    <div id="returnContainer">
+        <a href="/">Return to Homepage</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

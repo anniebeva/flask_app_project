@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <div id="introAbout" class="introContainer">
+        <h1 class="pageHeader">>Welcome to Flask</h1>
+        <p class="pageDescription">This is the home page of our Flask application.</p>
+    </div>
+
+    <div id="navigationBox" class="navigationContainer">
+        <h2 class="header2">Navigation: </h2>
+        <ul id="navigationList" class="unorderedList">
+            <li class="listItem"><a href="/about">About This App</a></li>
+            <li class="listItem"><a href="/contact">Contact Info</a></li>
+        </ul>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
